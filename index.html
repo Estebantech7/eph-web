@@ -1,149 +1,495 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esteban Perez Holdings</title>
+  <meta
+    name="description"
+    content="Esteban Perez Holdings - Building Responsible Enterprises for a Changing World."
+  />
+  <style>
+    :root {
+      --navy: #0d1633;
+      --navy-2: #14224a;
+      --gold: #c9a24b;
+      --gold-soft: #d8b86a;
+      --white: #f8f8f6;
+      --light: #dfe7f5;
+      --muted: #b8c2d9;
+      --card: rgba(255, 255, 255, 0.04);
+      --border: rgba(201, 162, 75, 0.22);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+      --max: 1180px;
+    }
 
-<title>Esteban Perez Holdings</title>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-body{
-font-family: Georgia, serif;
-background:#0f172a;
-color:white;
-text-align:center;
-padding:80px;
-margin:0;
-}
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top, rgba(201, 162, 75, 0.08), transparent 30%),
+        linear-gradient(180deg, var(--navy) 0%, #0a122a 100%);
+      color: var(--white);
+      line-height: 1.6;
+    }
 
-h1{
-font-size:48px;
-margin-bottom:50px;
-letter-spacing:1px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.cards{
-margin-top:40px;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.card{
-background:#1e293b;
-padding:25px;
-margin:20px;
-border-radius:10px;
-display:inline-block;
-width:260px;
-}
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
 
-.card h2{
-margin-bottom:10px;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10, 18, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
 
-.card p{
-color:#9aa4b2;
-font-size:18px;
-}
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 20px;
+    }
 
-.message{
-max-width:750px;
-margin:100px auto;
-text-align:left;
-line-height:1.7;
-font-size:18px;
-color:#d1d5db;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: var(--light);
+      font-weight: 600;
+    }
 
-.signature{
-margin-top:30px;
-font-style:italic;
-}
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
 
-.contact{
-margin-top:80px;
-font-size:16px;
-color:#94a3b8;
-}
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
 
-.contact a{
-color:#94a3b8;
-text-decoration:none;
-}
+    .nav-links a:hover {
+      color: var(--gold-soft);
+    }
 
-.contact a:hover{
-text-decoration:underline;
-}
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 60px 0 40px;
+    }
 
-</style>
+    .hero-inner {
+      width: 100%;
+    }
 
+    .hero-logo {
+      width: min(300px, 72vw);
+      margin: 0 auto 28px;
+      filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.28));
+    }
+
+    .eyebrow {
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.82rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 1.08;
+      color: var(--light);
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      width: min(760px, 94%);
+      margin: 0 auto 30px;
+      font-size: clamp(1rem, 2vw, 1.24rem);
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: #101010;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      color: var(--light);
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 44px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .enterprises {
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px 26px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201, 162, 75, 0.45);
+    }
+
+    .card h3 {
+      color: var(--light);
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+    }
+
+    .card .tag {
+      color: var(--gold-soft);
+      font-size: 0.95rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .founder-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .founder-card,
+    .message-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .founder-card img {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 18px;
+    }
+
+    .founder-card h3,
+    .message-card h3 {
+      color: var(--light);
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .founder-card p,
+    .message-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .signature {
+      margin-top: 18px;
+      color: var(--light);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 40px 0 50px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(0, 0, 0, 0.16);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      color: var(--light);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-text,
+    .footer-contact {
+      color: var(--muted);
+    }
+
+    .footer-contact div {
+      margin-bottom: 8px;
+    }
+
+    .small {
+      margin-top: 24px;
+      color: #93a0c0;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .cards,
+      .founder-wrap,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .card,
+      .founder-card,
+      .message-card {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero {
+        min-height: 86vh;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <img src="LogoEPH.png" alt="Esteban Perez Holdings logo" />
+        <span>Esteban Perez Holdings</span>
+      </a>
 
-<h1>Esteban Perez Holdings</h1>
+      <nav class="nav-links">
+        <a href="#enterprises">Enterprises</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="cards">
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <img class="hero-logo" src="LogoEPH.png" alt="Esteban Perez Holdings" />
 
-<div class="card">
-<h2>Kerkin Systems</h2>
-<p>IT Solutions</p>
-</div>
+        <div class="eyebrow">Esteban Perez Holdings</div>
 
-<div class="card">
-<h2>37 Equity</h2>
-<p>Real Estate</p>
-</div>
+        <h1>Building Responsible Enterprises for a Changing World</h1>
 
-<div class="card">
-<h2>Aegis Capital</h2>
-<p>Financial Services</p>
-</div>
+        <p>
+          A modern holding company grounded in discipline, integrity, and
+          long-term vision.
+        </p>
 
-</div>
+        <a class="btn" href="#founder">Learn More</a>
+      </div>
+    </section>
 
-<div class="message">
+    <section class="enterprises" id="enterprises">
+      <div class="container">
+        <h2 class="section-title">Our Enterprises</h2>
+        <p class="section-subtitle">
+          Esteban Perez Holdings supports focused ventures across technology,
+          real estate, and financial services.
+        </p>
 
-<h2>A Message from Esteban Perez</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="tag">IT Solutions</div>
+            <h3>Kerkin Systems</h3>
+            <p>
+              Focused on modern digital infrastructure, web solutions, and
+              practical technology systems designed for long-term business use.
+            </p>
+          </article>
 
-<p>
-To our readers and partners,
-</p>
+          <article class="card">
+            <div class="tag">Real Estate</div>
+            <h3>37 Equity</h3>
+            <p>
+              A real estate venture guided by thoughtful acquisition, sound
+              stewardship, and a commitment to durable value.
+            </p>
+          </article>
 
-<p>
-Esteban Perez Holdings was founded on a simple principle: meaningful enterprises are built by thoughtful people working together with integrity, discipline, and long-term vision.
-</p>
+          <article class="card">
+            <div class="tag">Financial Services</div>
+            <h3>Aegis Capital</h3>
+            <p>
+              Built around responsible capital thinking, disciplined analysis,
+              and a long-range view of opportunity.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<p>
-I approach this work with humility and a deep respect for the responsibility that comes with building and stewarding capital. My goal is to collaborate with exceptional individuals who believe in creating lasting value.
-</p>
+    <section id="founder">
+      <div class="container">
+        <h2 class="section-title">A Message from Esteban Perez</h2>
 
-<p>
-This journey is only beginning, and I look forward to building it together.
-</p>
+        <div class="founder-wrap">
+          <div class="founder-card">
+            <img src="LogoEPH.png" alt="Esteban Perez Holdings emblem" />
+            <h3>Founder’s Vision</h3>
+            <p>
+              Esteban Perez Holdings was founded with the belief that
+              enterprises should be built with responsibility, clarity, and a
+              meaningful long-term purpose.
+            </p>
+            <p>
+              Through its ventures, the company seeks to unite business
+              discipline with human progress.
+            </p>
+          </div>
 
-<p class="signature">
-— Esteban Perez<br>
-Founder, Esteban Perez Holdings
-</p>
+          <div class="message-card">
+            <h3>A Message from Esteban Perez</h3>
 
-</div>
+            <p>
+              At Esteban Perez Holdings, we believe that meaningful enterprises
+              are built through discipline, integrity, and a long-term vision.
+            </p>
 
-<div class="contact">
+            <p>
+              Our purpose is simple: to help people use their time, energy, and
+              capital wisely. When these resources are managed with clarity and
+              responsibility, businesses become more than economic engines —
+              they become instruments of progress for families, communities, and
+              future generations.
+            </p>
 
-<p>Contact</p>
+            <p>
+              I approach this work with humility and a deep respect for the
+              responsibility that comes with building and stewarding
+              enterprises. My goal is not simply to grow companies, but to
+              collaborate with thoughtful people who believe in creating lasting
+              value.
+            </p>
 
-<p>
-Esteban Perez
-</p>
+            <p>
+              This journey is only beginning, and I look forward to building it
+              together.
+            </p>
 
-<p>
-Email: <a href="mailto:perez.holdings@icloud.com">perez.holdings@icloud.com</a>
-</p>
+            <div class="signature">
+              — Esteban Perez<br />
+              Founder
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<p>
-Phone: 424.262.5383
-</p>
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">Esteban Perez Holdings</div>
+        <div class="footer-text">Los Angeles, California</div>
+        <div class="footer-text">IT Solutions | Real Estate | Financial Services</div>
+        <div class="small">© 2026 Esteban Perez Holdings. All rights reserved.</div>
+      </div>
 
-</div>
-
+      <div class="footer-contact">
+        <div><strong>Contact</strong></div>
+        <div>424.262.5383</div>
+        <div>
+          <a href="mailto:perez.holdings@icloud.com">perez.holdings@icloud.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
+
