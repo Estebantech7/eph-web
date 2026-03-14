@@ -115,6 +115,59 @@
       width: 100%;
     }
 
+    /* GLOBAL TIME BAR */
+    .global-time-wrap {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto 26px auto;
+      padding: 0 8px;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+    }
+
+    .global-time-title {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(216, 184, 106, 0.74);
+      margin-bottom: 10px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .global-time-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      color: var(--gold-soft);
+      padding: 10px 18px;
+      border-top: 1px solid rgba(201, 162, 75, 0.22);
+      border-bottom: 1px solid rgba(201, 162, 75, 0.16);
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.012) 0%,
+        rgba(255,255,255,0.028) 50%,
+        rgba(255,255,255,0.012) 100%
+      );
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+    }
+
+    .global-time-bar span {
+      white-space: nowrap;
+    }
+
+    .time-sep {
+      color: rgba(216, 184, 106, 0.36);
+      padding: 0 2px;
+    }
+
     .hero-logo {
       width: min(300px, 72vw);
       margin: 0 auto 28px;
@@ -322,6 +375,23 @@
       section {
         padding: 72px 0;
       }
+
+      .global-time-wrap {
+        margin-bottom: 22px;
+        padding: 0;
+      }
+
+      .global-time-title {
+        font-size: 10px;
+        letter-spacing: 0.18em;
+      }
+
+      .global-time-bar {
+        font-size: 12px;
+        line-height: 1.8;
+        gap: 6px;
+        padding: 10px 12px;
+      }
     }
 
     @media (max-width: 560px) {
@@ -337,6 +407,10 @@
 
       .hero {
         min-height: 86vh;
+      }
+
+      .global-time-bar {
+        font-size: 11px;
       }
     }
   </style>
@@ -360,6 +434,26 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-inner">
+
+        <div class="global-time-wrap">
+          <div class="global-time-title">Global Presence</div>
+          <div class="global-time-bar">
+            <span id="clock-la"></span>
+            <span class="time-sep">|</span>
+            <span id="clock-ny"></span>
+            <span class="time-sep">|</span>
+            <span id="clock-dover"></span>
+            <span class="time-sep">|</span>
+            <span id="clock-miami"></span>
+            <span class="time-sep">|</span>
+            <span id="clock-houston"></span>
+            <span class="time-sep">|</span>
+            <span id="clock-frankfurt"></span>
+            <span class="time-sep">|</span>
+            <span id="clock-madrid"></span>
+          </div>
+        </div>
+
         <img class="hero-logo" src="LogoEPH2.jpg" alt="Esteban Perez Holdings" />
 
         <div class="eyebrow">Esteban Perez Holdings</div>
@@ -490,5 +584,44 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function formatCityTime(label, timeZone, locale = "en-US") {
+      const now = new Date();
+      const time = now.toLocaleTimeString(locale, {
+        timeZone,
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+      });
+      return `${label} — ${time}`;
+    }
+
+    function updateGlobalClocks() {
+      document.getElementById("clock-la").textContent =
+        formatCityTime("Los Angeles, CA", "America/Los_Angeles");
+
+      document.getElementById("clock-ny").textContent =
+        formatCityTime("New York, NY", "America/New_York");
+
+      document.getElementById("clock-dover").textContent =
+        formatCityTime("Dover, Delaware", "America/New_York");
+
+      document.getElementById("clock-miami").textContent =
+        formatCityTime("Miami, FL", "America/New_York");
+
+      document.getElementById("clock-houston").textContent =
+        formatCityTime("Houston, TX", "America/Chicago");
+
+      document.getElementById("clock-frankfurt").textContent =
+        formatCityTime("Frankfurt, Deutschland", "Europe/Berlin");
+
+      document.getElementById("clock-madrid").textContent =
+        formatCityTime("Madrid, España", "Europe/Madrid");
+    }
+
+    updateGlobalClocks();
+    setInterval(updateGlobalClocks, 1000);
+  </script>
 </body>
 </html>
