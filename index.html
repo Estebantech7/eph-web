@@ -440,17 +440,17 @@
           <div class="global-time-bar">
             <span id="clock-la"></span>
             <span class="time-sep">|</span>
+            <span id="clock-houston"></span>
+            <span class="time-sep">|</span>
             <span id="clock-ny"></span>
             <span class="time-sep">|</span>
             <span id="clock-dover"></span>
             <span class="time-sep">|</span>
-            <span id="clock-miami"></span>
-            <span class="time-sep">|</span>
-            <span id="clock-houston"></span>
+            <span id="clock-london"></span>
             <span class="time-sep">|</span>
             <span id="clock-frankfurt"></span>
             <span class="time-sep">|</span>
-            <span id="clock-madrid"></span>
+            <span id="clock-tokyo"></span>
           </div>
         </div>
 
@@ -601,23 +601,23 @@
       document.getElementById("clock-la").textContent =
         formatCityTime("Los Angeles, CA", "America/Los_Angeles");
 
+      document.getElementById("clock-houston").textContent =
+        formatCityTime("Houston, TX", "America/Chicago");
+
       document.getElementById("clock-ny").textContent =
         formatCityTime("New York, NY", "America/New_York");
 
       document.getElementById("clock-dover").textContent =
         formatCityTime("Dover, Delaware", "America/New_York");
 
-      document.getElementById("clock-miami").textContent =
-        formatCityTime("Miami, FL", "America/New_York");
-
-      document.getElementById("clock-houston").textContent =
-        formatCityTime("Houston, TX", "America/Chicago");
+      document.getElementById("clock-london").textContent =
+        formatCityTime("London, UK", "Europe/London");
 
       document.getElementById("clock-frankfurt").textContent =
         formatCityTime("Frankfurt, Deutschland", "Europe/Berlin");
 
-      document.getElementById("clock-madrid").textContent =
-        formatCityTime("Madrid, España", "Europe/Madrid");
+      document.getElementById("clock-tokyo").textContent =
+        formatCityTime("Tokyo, Japan", "Asia/Tokyo");
     }
 
     updateGlobalClocks();
