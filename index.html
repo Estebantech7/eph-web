@@ -906,20 +906,9 @@
             <h4 data-i18n="form_title">CONSULTATION REQUEST</h4>
 
             <div id="form-fields">
-              <div class="form-row">
-                <div class="field">
-                  <label data-i18n="form_fname">First Name</label>
-                  <input type="text" id="f_fname" placeholder="John" />
-                </div>
-                <div class="field">
-                  <label data-i18n="form_lname">Last Name</label>
-                  <input type="text" id="f_lname" placeholder="Doe" />
-                </div>
-              </div>
-
               <div class="field">
-                <label data-i18n="form_email">Email Address</label>
-                <input type="email" id="f_email" placeholder="john@company.com" />
+                <label data-i18n="form_fname">Full Name</label>
+                <input type="text" id="f_fname" placeholder="John Doe" />
               </div>
 
               <div class="field">
@@ -928,28 +917,12 @@
               </div>
 
               <div class="field">
-                <label data-i18n="form_company">Company / Organization</label>
-                <input type="text" id="f_company" placeholder="Your company" />
-              </div>
-
-              <div class="field">
-                <label data-i18n="form_interest">Area of Interest</label>
-                <select id="f_interest">
-                  <option value="" data-i18n="form_select">Select one…</option>
-                  <option value="partnership" data-i18n="opt1">Business Partnership</option>
-                  <option value="capital" data-i18n="opt2">Capital & Investment</option>
-                  <option value="enterprise" data-i18n="opt3">Enterprise Development</option>
-                  <option value="other" data-i18n="opt4">Other</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label data-i18n="form_message">Message</label>
-                <textarea id="f_message" placeholder="Tell us about your goals…"></textarea>
+                <label data-i18n="form_email">Email Address</label>
+                <input type="email" id="f_email" placeholder="john@company.com" />
               </div>
 
               <button class="btn btn-gold form-submit" onclick="submitForm()" data-i18n="form_submit">Submit Request</button>
-              <p class="form-note" data-i18n="form_note">We respond to all inquiries within 2 business days.</p>
+              <p class="form-note" data-i18n="form_note">We will reach out to you within 2 business days.</p>
             </div>
 
             <div class="form-success" id="form-success">
@@ -984,7 +957,7 @@
           <h5 data-i18n="footer_contact">Contact</h5>
           <span>California, United States</span>
           <a href="tel:+14242625383">+1 (424) 262-5383</a>
-          <a href="mailto:perez.holdings@icloud.com">perez.holdings@icloud.com</a>
+          <a href="/cdn-cgi/l/email-protection#e8988d9a8d92c68087848c81868f9ba8818b84879d8cc68b8785"><span class="__cf_email__" data-cfemail="3e4e5b4c5b44105651525a5750594d7e575d52514b5a105d5153">[email&#160;protected]</span></a>
         </div>
       </div>
 
@@ -995,7 +968,7 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     /* ── TRANSLATIONS ── */
     const i18n = {
       en: {
@@ -1027,11 +1000,9 @@
         consult_pt3: 'Enterprise development & stewardship',
         consult_pt4: 'Long-term investment alignment',
         form_title: 'CONSULTATION REQUEST',
-        form_fname: 'First Name', form_lname: 'Last Name', form_email: 'Email Address', form_phone: 'Phone Number',
-        form_company: 'Company / Organization', form_interest: 'Area of Interest',
-        form_select: 'Select one…', opt1: 'Business Partnership', opt2: 'Capital & Investment', opt3: 'Enterprise Development', opt4: 'Other',
-        form_message: 'Message', form_submit: 'Submit Request',
-        form_note: 'We respond to all inquiries within 2 business days.',
+        form_fname: 'Full Name', form_phone: 'Phone Number', form_email: 'Email Address',
+        form_submit: 'Submit Request',
+        form_note: 'We will reach out to you within 2 business days.',
         success_title: 'Thank You', success_msg: 'Your consultation request has been received. We will be in touch shortly.',
         footer_tagline: 'Building Responsible Enterprises<br>for a Changing World.',
         footer_nav: 'Navigation', footer_contact: 'Contact', footer_legal: 'Built with discipline & integrity.'
@@ -1065,11 +1036,9 @@
         consult_pt3: 'Desarrollo y administración de empresas',
         consult_pt4: 'Alineación de inversiones a largo plazo',
         form_title: 'SOLICITUD DE CONSULTORÍA',
-        form_fname: 'Nombre', form_lname: 'Apellido', form_email: 'Correo Electrónico', form_phone: 'Teléfono',
-        form_company: 'Empresa / Organización', form_interest: 'Área de Interés',
-        form_select: 'Seleccione una opción…', opt1: 'Alianza Comercial', opt2: 'Capital e Inversión', opt3: 'Desarrollo Empresarial', opt4: 'Otro',
-        form_message: 'Mensaje', form_submit: 'Enviar Solicitud',
-        form_note: 'Respondemos a todas las consultas en un plazo de 2 días hábiles.',
+        form_fname: 'Nombre Completo', form_phone: 'Número de Teléfono', form_email: 'Correo Electrónico',
+        form_submit: 'Enviar Solicitud',
+        form_note: 'Nos pondremos en contacto contigo en un plazo de 2 días hábiles.',
         success_title: 'Gracias', success_msg: 'Su solicitud de consultoría ha sido recibida. Nos pondremos en contacto en breve.',
         footer_tagline: 'Construyendo Empresas Responsables<br>para un Mundo en Cambio.',
         footer_nav: 'Navegación', footer_contact: 'Contacto', footer_legal: 'Construido con disciplina e integridad.'
@@ -1103,10 +1072,8 @@
         consult_pt3: '企業の発展と管理',
         consult_pt4: '長期投資の整合',
         form_title: 'コンサルティング申し込みフォーム',
-        form_fname: '名', form_lname: '姓', form_email: 'メールアドレス', form_phone: '電話番号',
-        form_company: '会社名 / 組織名', form_interest: '関心分野',
-        form_select: '選択してください…', opt1: 'ビジネスパートナーシップ', opt2: '資本・投資', opt3: '企業開発', opt4: 'その他',
-        form_message: 'メッセージ', form_submit: '申し込みを送信',
+        form_fname: 'お名前', form_phone: '電話番号', form_email: 'メールアドレス',
+        form_submit: '申し込みを送信',
         form_note: 'すべてのお問い合わせに2営業日以内にご返答いたします。',
         success_title: 'ありがとうございます', success_msg: 'コンサルティングのお申し込みを受け付けました。近日中にご連絡いたします。',
         footer_tagline: '変化する世界のための<br>責任ある企業の構築。',
@@ -1136,17 +1103,14 @@
 
       // update placeholders
       const ph = {
-        en: { fname:'John', lname:'Doe', email:'john@company.com', phone:'+1 (000) 000-0000', company:'Your company', msg:'Tell us about your goals…' },
-        es: { fname:'Juan', lname:'García', email:'juan@empresa.com', phone:'+1 (000) 000-0000', company:'Su empresa', msg:'Cuéntenos sobre sus objetivos…' },
-        ja: { fname:'太郎', lname:'山田', email:'taro@kaisha.co.jp', phone:'+81-00-0000-0000', company:'会社名', msg:'お客様の目標についてお聞かせください…' }
+        en: { fname:'John Doe', phone:'+1 (000) 000-0000', email:'john@company.com' },
+        es: { fname:'Juan García', phone:'+1 (000) 000-0000', email:'juan@empresa.com' },
+        ja: { fname:'山田 太郎', phone:'+81-00-0000-0000', email:'taro@kaisha.co.jp' }
       };
       if (document.getElementById('f_fname')) {
         document.getElementById('f_fname').placeholder = ph[lang].fname;
-        document.getElementById('f_lname').placeholder = ph[lang].lname;
-        document.getElementById('f_email').placeholder = ph[lang].email;
         document.getElementById('f_phone').placeholder = ph[lang].phone;
-        document.getElementById('f_company').placeholder = ph[lang].company;
-        document.getElementById('f_message').placeholder = ph[lang].msg;
+        document.getElementById('f_email').placeholder = ph[lang].email;
       }
     }
 
@@ -1189,17 +1153,34 @@
     /* ── FORM ── */
     function submitForm() {
       const fname = document.getElementById('f_fname').value.trim();
+      const phone = document.getElementById('f_phone').value.trim();
       const email = document.getElementById('f_email').value.trim();
 
-      if (!fname || !email) {
+      if (!fname || !phone || !email) {
         const msgs = {
-          en: 'Please enter your name and email address.',
-          es: 'Por favor ingrese su nombre y correo electrónico.',
-          ja: '名前とメールアドレスを入力してください。'
+          en: 'Please fill in your name, phone number, and email address.',
+          es: 'Por favor complete su nombre, número de teléfono y correo electrónico.',
+          ja: '名前、電話番号、メールアドレスをすべて入力してください。'
         };
         alert(msgs[currentLang]);
         return;
       }
+
+      const subjects = {
+        en: 'Consultation Request — Esteban Perez Holdings',
+        es: 'Solicitud de Consultoría — Esteban Perez Holdings',
+        ja: 'コンサルティング申し込み — Esteban Perez Holdings'
+      };
+
+      const bodies = {
+        en: `Hello,\n\nA new consultation request has been submitted.\n\nName: ${fname}\nPhone: ${phone}\nEmail: ${email}\n\nThank you.`,
+        es: `Hola,\n\nSe ha enviado una nueva solicitud de consultoría.\n\nNombre: ${fname}\nTeléfono: ${phone}\nCorreo: ${email}\n\nGracias.`,
+        ja: `こんにちは、\n\n新しいコンサルティングのお申し込みがありました。\n\nお名前: ${fname}\n電話番号: ${phone}\nメール: ${email}\n\nよろしくお願いいたします。`
+      };
+
+      const subject = encodeURIComponent(subjects[currentLang]);
+      const body = encodeURIComponent(bodies[currentLang]);
+      window.location.href = `mailto:perez.holdings@icloud.com?subject=${subject}&body=${body}`;
 
       document.getElementById('form-fields').style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
